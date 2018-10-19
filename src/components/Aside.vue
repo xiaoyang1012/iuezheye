@@ -10,22 +10,22 @@
         background-color="#30333C"
         text-color="#687386"
         active-text-color="#fff">
-        <el-menu-item index="1">
+        <el-menu-item index="99">
             <i class="el-icon-menu"></i>
             <span>首页</span>
         </el-menu-item>
-        <el-menu-item index="5">
-            <i class="el-icon-"></i><span>首页</span>
+        <el-menu-item class="z-submenu" :index="index" v-for="(item,index) in cate" :key="index">
+            <i class="el-icon-"></i><span>{{item.title}}</span>
         </el-menu-item>
-        <el-menu-item index="2">
+        <el-menu-item index="98">
             <i class="el-icon-document"></i>
             <span slot="title">文章导读</span>
         </el-menu-item>
-        <el-menu-item index="3">
+        <el-menu-item index="97">
             <i class="el-icon-edit-outline"></i>
             <span slot="title">留言板</span>
         </el-menu-item>
-        <el-menu-item index="4">
+        <el-menu-item index="96">
             <i class="el-icon-info"></i>
             <span slot="title">关于IUE</span>
         </el-menu-item>
@@ -38,8 +38,10 @@ import axios from "axios";
 @Component
 export default class Aside extends Vue {
   iHeight: number = 0;
+  cate: Array<any> = [];
   async created() {
     let { data } = await axios.get("/api/zheye/cate");
+    this.cate = data.data;
   }
   mounted() {
     if (document.documentElement) {
@@ -71,6 +73,10 @@ export default class Aside extends Vue {
   .el-menu-item {
     font-size: 12px;
     color: #6b7386;
+  }
+  .z-submenu.el-menu-item {
+    height: 32px;
+    line-height: 32px;
   }
 }
 </style>

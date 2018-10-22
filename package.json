@@ -27,6 +27,7 @@
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
     "typescript": "^3.0.0",
+    "vue-lazyload": "^1.2.6",
     "vue-template-compiler": "^2.5.17"
   },
   "eslintConfig": {

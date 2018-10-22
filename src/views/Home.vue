@@ -31,7 +31,7 @@
             <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6" v-for="(list,index) in cate.list" :key="index">
               
               <a :href="list.link" target="_blank" class="web-card-item">
-                <img class="web-card-item-thumb" :src="list.thumb" alt="" srcset="">      
+                <img class="web-card-item-thumb" v-lazy="list.thumb" alt="" srcset="">      
                 <div class="web-card-item-info">
                   <h5 class="web-card-item-info-title">{{list.title}}</h5>
                   <p class="web-card-item-info-desc">{{list.desc}}</p>

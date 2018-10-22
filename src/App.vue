@@ -24,4 +24,16 @@ export default class App extends Vue {}
 </script>
 
 <style>
+html,
+body,
+#app,
+.el-main,
+.el-container {
+  height: 100%;
+  overflow: hidden;
+}
+.el-main {
+  background: #f1f2f9;
+  overflow-y: auto;
+}
 </style>
